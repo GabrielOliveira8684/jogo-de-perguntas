@@ -1,4 +1,4 @@
-# Quiz de Perguntas sobre Python 🧠🐍
+# Quiz de Perguntas sobre Python
 
 Um jogo de perguntas simples em Python para testar seus conhecimentos básicos sobre a linguagem.  
 Este projeto foi criado como um exercício prático de lógica, estrutura de controle e interação com o usuário em Python.
