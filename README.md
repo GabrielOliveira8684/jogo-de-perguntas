@@ -20,7 +20,6 @@ Roda o script:
 
 Bash
 python jogo.py
-(Ou o nome que tu deu pro arquivo, tipo main.py)
 
 🧠 O que eu pratiquei aqui
 Manipulação de Strings (usando .lower() ou .strip() pra não dar erro por bobeira).
