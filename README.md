@@ -1,24 +1,32 @@
-# Quiz de Perguntas sobre Python
+# ❓ Jogo de Perguntas (Python)
 
-Um jogo de perguntas simples em Python para testar seus conhecimentos básicos sobre a linguagem.  
-Este projeto foi criado como um exercício prático de lógica, estrutura de controle e interação com o usuário em Python.
+Um quiz interativo que fiz pra treinar a manipulação de strings e entender como as estruturas de decisão funcionam no Python. É simples, mas a lógica tá toda lá!
 
----
+## 🚀 O que ele faz?
 
-# Sobre o Jogo
+O jogo te joga umas perguntas e você tem que acertar a resposta pra pontuar. 
+* 📝 Sistema de perguntas e respostas.
+* 🔢 Contagem de acertos no final.
+* 🛠️ Tratamento básico de texto (pra aceitar maiúsculas e minúsculas sem erro).
 
-Este é um quiz interativo no terminal que faz **5 perguntas sobre conceitos básicos de Python** (tipos de dados, operadores, funções, etc).  
-O objetivo é simples: **acertar o máximo de perguntas possíveis** e acompanhar sua pontuação final.
+## 🛠️ Como testar
 
----
+Se tu tiver o Python na máquina, é só mandar bala:
 
-# Como Jogar
+1. Clone o repo:
+   ```bash
+   git clone [https://github.com/GabrielOliveira8684/jogo-de-perguntas.git](https://github.com/GabrielOliveira8684/jogo-de-perguntas.git)
+Roda o script:
 
-1. Certifique‑se de ter o **Python instalado** no sistema  
-2. Navegue até a pasta do projeto usando o terminal  
-3. Execute o script com um dos comandos abaixo:
+Bash
+python jogo.py
+(Ou o nome que tu deu pro arquivo, tipo main.py)
 
-```bash
-python nome_do_arquivo.py
-# ou, em algumas máquinas:
-python3 nome_do_arquivo.py
+🧠 O que eu pratiquei aqui
+Manipulação de Strings (usando .lower() ou .strip() pra não dar erro por bobeira).
+
+Estruturas de Decisão (if/elif/else) pra validar as respostas.
+
+Variáveis de Controle pra guardar a pontuação do jogador.
+
+Valeu, tchau! ✌️
