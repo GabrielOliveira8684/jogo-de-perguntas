@@ -19,6 +19,7 @@ Se tu tiver o Python na máquina, é só mandar bala:
 Roda o script:
 
 Bash
+
 python jogo.py
 
 🧠 O que eu pratiquei aqui
