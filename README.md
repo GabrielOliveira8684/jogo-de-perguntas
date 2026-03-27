@@ -23,7 +23,7 @@ Bash
 python jogo.py
 
 🧠 O que eu pratiquei aqui
-Manipulação de Strings (usando .lower() ou .strip() pra não dar erro por bobeira).
+Manipulação de Strings (usando .lower() pra não dar erro por bobeira).
 
 Estruturas de Decisão (if/elif/else) pra validar as respostas.
 
