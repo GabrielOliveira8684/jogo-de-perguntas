@@ -22,7 +22,8 @@ Bash
 
 python jogo.py
 
-O que eu pratiquei aqui
+## O que eu pratiquei aqui
+
 Manipulação de Strings (usando .lower() pra não dar erro por bobeira).
 
 Estruturas de Decisão (if/elif/else) pra validar as respostas.
