@@ -1,69 +1,369 @@
-pontos = 0
+import random
+import os
+import platform
+
+def perguntas(qual, contador):
+    if qual == 0:
+        return (f'\nPERGUNTA NÚMERO {contador}: \nQual tipo de dado usamos para representar números inteiros em Python?')
+    elif qual == 1:
+        return (f'\nPERGUNTA NÚMERO {contador}: \nQual operador usamos para multiplicação em Python?')
+    elif qual == 2:
+        return (f'\nPERGUNTA NÚMERO {contador}: \nQual função usamos para imprimir algo na tela em Python?')
+    elif qual == 3:
+        return (f'\nPERGUNTA NÚMERO {contador}: \nQual operador verifica a igualdade entre dois valores em Python?')
+    else:
+        return (f'\nPERGUNTA NÚMERO {contador}: \nQual palavra reservada usamos para criar uma função em Python?')
+
+def resposta():
+    return input('Digite sua resposta: ')
+
 def incorreta():
-    print('RESPOSTA INCORRETA!')
+    print("RESPOSTA INCORRETA!\n")
 
 def correta(pontos):
-    print('\nRESPOSTA CORRETA!!')
+    print("\nRESPOSTA CORRETA!!\n")
     return pontos + 1
 
 def invalida():
-    print('\nRESPOSTA INVÁLIDA')
-    print('---------------------------------\nPERGUNTA NÚMERO 1: \nQual tipo de dado usamos para representar números inteiros em Python? \n1- INT\n2- FLOAT\n3- STR\n4- BOOL\n---------------------------------')
-print('\nBEM-VINDO AO JOGO DE PERGUNTAS PYTHON!\nSEU OBJETIVO É ACERTAR O MÁXIMO DE PERGUNTAS POSSÍVEIS')
+    print("\nRESPOSTA INVÁLIDA")
 
-print('---------------------------------\nPERGUNTA NÚMERO 1: \nQual tipo de dado usamos para representar números inteiros em Python? \n1- INT\n2- FLOAT\n3- STR\n4- BOOL\n---------------------------------')
-resp = int(input('DIGITE SUA RESPOSTA: '))
-while resp not in [1, 2, 3, 4]:
-    invalida()
-    resp = int(input('DIGITE SUA RESPOSTA: ')) 
+def limpa_tela():
+    if platform.system() == 'Windows':
+        os.system('cls')
+    else:
+        os.system('clear')
 
-if resp == 1:
-    pontos = correta(pontos)
-else:
-    incorreta()
+matriz = [
+    ["INT", "FLOAT", "STR", "BOOL"],
+    ["*", "**", "x", "."],
+    ["PRINT", "INPUT", "VAR", "SHOW"],
+    ["==", "=", "!=", ">"],
+    ["DEF", "FUNC", "FUNCTION", "CREATE"],
+]
 
-print('---------------------------------\nPERGUNTA NÚMERO 2: \nQual operador usamos para multiplicação em Python? \n1- X\n2- **\n3- *\n4- .\n---------------------------------')
-resp = int(input('DIGITE SUA RESPOSTA: '))
-while resp not in [1, 2, 3, 4]:
-    invalida()
-    resp = int(input('DIGITE SUA RESPOSTA: '))
+random.shuffle(matriz)
 
-if resp == 3:
-    pontos = correta(pontos)
-else:
-    incorreta()
+for contador in range(5):
+    random.shuffle(matriz[contador])
 
-print('---------------------------------\nPERGUNTA NÚMERO 3: \nQual função usamos para imprimir algo na tela em Python? \n1- print()\n2- input()\n3- var()\n4- show()\n---------------------------------')
-resp = int(input('DIGITE SUA RESPOSTA: '))
-while resp not in [1, 2, 3, 4]:
-    invalida()
-    resp = int(input('DIGITE SUA RESPOSTA: '))
+pontos = 0
+escolha = 0
 
-if resp == 1:
-    pontos = correta(pontos)
-else:
-    incorreta()
+print("\nBEM-VINDO AO JOGO DE PERGUNTAS PYTHON!\nSEU OBJETIVO É ACERTAR O MÁXIMO DE PERGUNTAS POSSÍVEIS")
 
-print('---------------------------------\nPERGUNTA NÚMERO 4: \nQual operador verifica a igualdade entre dois valores em Python? \n1- ==\n2- =\n3- !=\n4- >\n---------------------------------')
-resp = int(input('DIGITE SUA RESPOSTA: '))
-while resp not in [1, 2, 3, 4]:
-    invalida()
-    resp = int(input('DIGITE SUA RESPOSTA: '))
+contador = 1
 
-if resp == 1:
-    pontos = correta(pontos)
-else:
-    incorreta()
+if 'INT' in matriz[0]:
+    escolha = 0
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[0][0]}\n| {matriz[0][1]}\n| {matriz[0][2]}\n| {matriz[0][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'int':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif '*' in matriz[0]:
+    escolha = 1
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[0][0]}\n| {matriz[0][1]}\n| {matriz[0][2]}\n| {matriz[0][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == '*':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif 'PRINT' in matriz[0]:
+    escolha = 2
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[0][0]}\n| {matriz[0][1]}\n| {matriz[0][2]}\n| {matriz[0][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'print':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif '==' in matriz[0]:
+    escolha = 3
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[0][0]}\n| {matriz[0][1]}\n| {matriz[0][2]}\n| {matriz[0][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == '==':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif 'DEF' in matriz[0]:
+    escolha = 4
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[0][0]}\n| {matriz[0][1]}\n| {matriz[0][2]}\n| {matriz[0][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'def':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
 
-print('---------------------------------\nPERGUNTA NÚMERO 5: \nQual palavra reservada usamos para criar uma função em Python? \n1- func\n2- def\n3- function\n4- create\n---------------------------------')
-resp = int(input('DIGITE SUA RESPOSTA: '))
-while resp not in [1, 2, 3, 4]:
-    invalida()
-    resp = int(input('DIGITE SUA RESPOSTA: '))
+contador = 2
 
-if resp == 2:
-    pontos = correta(pontos)
-else:
-    incorreta()
+if 'INT' in matriz[1]:
+    escolha = 0
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[1][0]}\n| {matriz[1][1]}\n| {matriz[1][2]}\n| {matriz[1][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'int':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif '*' in matriz[1]:
+    escolha = 1
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[1][0]}\n| {matriz[1][1]}\n| {matriz[1][2]}\n| {matriz[1][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == '*':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif 'PRINT' in matriz[1]:
+    escolha = 2
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[1][0]}\n| {matriz[1][1]}\n| {matriz[1][2]}\n| {matriz[1][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'print':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif '==' in matriz[1]:
+    escolha = 3
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[1][0]}\n| {matriz[1][1]}\n| {matriz[1][2]}\n| {matriz[1][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == '==':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif 'DEF' in matriz[1]:
+    escolha = 4
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[1][0]}\n| {matriz[1][1]}\n| {matriz[1][2]}\n| {matriz[1][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'def':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
 
-print(f'---------------------------------\nFIM DE JOGO!!\nVOCÊ ACERTOU {pontos} PERGUNTAS!\n---------------------------------')
+contador = 3
+
+if 'INT' in matriz[2]:
+    escolha = 0
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[2][0]}\n| {matriz[2][1]}\n| {matriz[2][2]}\n| {matriz[2][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'int':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif '*' in matriz[2]:
+    escolha = 1
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[2][0]}\n| {matriz[2][1]}\n| {matriz[2][2]}\n| {matriz[2][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == '*':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif 'PRINT' in matriz[2]:
+    escolha = 2
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[2][0]}\n| {matriz[2][1]}\n| {matriz[2][2]}\n| {matriz[2][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'print':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif '==' in matriz[2]:
+    escolha = 3
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[2][0]}\n| {matriz[2][1]}\n| {matriz[2][2]}\n| {matriz[2][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == '==':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif 'DEF' in matriz[2]:
+    escolha = 4
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[2][0]}\n| {matriz[2][1]}\n| {matriz[2][2]}\n| {matriz[2][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'def':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+
+contador = 4
+
+if 'INT' in matriz[3]:
+    escolha = 0
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[3][0]}\n| {matriz[3][1]}\n| {matriz[3][2]}\n| {matriz[3][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'int':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif '*' in matriz[3]:
+    escolha = 1
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[3][0]}\n| {matriz[3][1]}\n| {matriz[3][2]}\n| {matriz[3][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == '*':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif 'PRINT' in matriz[3]:
+    escolha = 2
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[3][0]}\n| {matriz[3][1]}\n| {matriz[3][2]}\n| {matriz[3][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'print':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif '==' in matriz[3]:
+    escolha = 3
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[3][0]}\n| {matriz[3][1]}\n| {matriz[3][2]}\n| {matriz[3][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == '==':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif 'DEF' in matriz[3]:
+    escolha = 4
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[3][0]}\n| {matriz[3][1]}\n| {matriz[3][2]}\n| {matriz[3][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'def':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+
+contador = 5
+
+if 'INT' in matriz[4]:
+    escolha = 0
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[4][0]}\n| {matriz[4][1]}\n| {matriz[4][2]}\n| {matriz[4][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'int':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif '*' in matriz[4]:
+    escolha = 1
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[4][0]}\n| {matriz[4][1]}\n| {matriz[4][2]}\n| {matriz[4][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == '*':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif 'PRINT' in matriz[4]:
+    escolha = 2
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[4][0]}\n| {matriz[4][1]}\n| {matriz[4][2]}\n| {matriz[4][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'print':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif '==' in matriz[4]:
+    escolha = 3
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[4][0]}\n| {matriz[4][1]}\n| {matriz[4][2]}\n| {matriz[4][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == '==':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+elif 'DEF' in matriz[4]:
+    escolha = 4
+    pergunta = perguntas(escolha, contador)
+    print(pergunta)
+    print(f"------------------------------------------------------------------\n| {matriz[4][0]}\n| {matriz[4][1]}\n| {matriz[4][2]}\n| {matriz[4][3]}\n------------------------------------------------------------------")
+    resp = resposta()
+    if resp.lower() == 'def':
+        pontos = correta(pontos)
+        limpa_tela()
+    else:
+        incorreta()
+        limpa_tela()
+
+print(f'Você fez {pontos} pontos, PARABÉNS!')
