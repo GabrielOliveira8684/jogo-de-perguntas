@@ -39,4 +39,4 @@ Com a nova atualização, o projeto deixou de ser apenas um script linear e pass
 * Interação com o Sistema Operacional (os e platform): Identificação automática do sistema do usuário (Windows vs. Linux/Mac) para executar comandos de terminal nativos (cls ou clear).
 * Lógica de Busca Orientada a Conteúdo: Uso do operador in para rastrear quais dados estavam dentro da linha sorteada da matriz, blindando o código contra erros de referência.
 
-Valeu!
+Valeu! ✌️
